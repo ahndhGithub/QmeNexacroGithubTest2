@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.03"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="D:\013_DevWorkspace\011_workspace-QME\dev_qme__Admin\QME_UI\" generated="C:\Users\20110362\Documents\nexacro\outputs\Admin\Admin_QME_UI\">
+      <File url="environment.xml" checksum="20191201212651" errormsg=""/>
+      <File url="typedefinition.xml" checksum="20191203113713" errormsg=""/>
+      <File url="appvariables.xml" checksum="20191203155615" errormsg=""/>
+      <File url="_resource_\_theme_\HintsEduTheme\theme.xcss" checksum="20191116145645" errormsg=""/>
+      <File url="_resource_\_theme_\default\theme.xcss" checksum="20191107100856" errormsg=""/>
+      <File url="App_Desktop.xadl" checksum="20191112115925" errormsg=""/>
+      <File url="App_Phone.xadl" checksum="20191104101535" errormsg=""/>
+      <File url="Src_HintsEduLib\Util_adh.xjs" checksum="20191203155658" errormsg=""/>
+      <File url="Base\POList.xfdl" checksum="20191203170630" errormsg=""/>
+      <File url="Frame\Form_Logon.xfdl" checksum="20191203131746" errormsg=""/>
+      <File url="Comm\Comm_SearchConditionFromTo.xfdl" checksum="20191203154440" errormsg=""/>
+    </Info>
+  </GenInfo>
+</root>

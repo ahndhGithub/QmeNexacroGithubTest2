@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="cmmSearchConditionFromTo" width="391" height="21" onload="form_onload" scrolltype="none">
+    <Layouts>
+      <Layout height="21" width="391">
+        <Static id="Static00" taborder="1" text="To" left="181" top="0" width="28" height="21" textAlign="center"/>
+        <Edit id="EditFrom" taborder="1" left="0" height="21" top="0" cssclass="essential" width="150" onchanged="EditFrom_onchanged"/>
+        <Edit id="EditTo" taborder="2" left="220" height="21" top="0" cssclass="essential" width="150"/>
+        <Button id="btnFrom" taborder="3" left="150" top="0" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_onclick" EditNameToApply="From"/>
+        <Button id="btnTo" taborder="4" left="370" top="0" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_onclick" EditNameToApply="To"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[include "Src_HintsEduLib::All_EduLib.xjs";
+/**
+*  @MenuPath    Comm > Comm_CalFromTo (공통 기간달력)
+*  @FileName 	Comm_CalFromTo.xfdl 
+*  @Creator 	Education
+*  @CreateDate 	2019.01.10
+*  @Desction    기간달력
+************** 소스 수정 이력 ***************************************************
+*  date          		Modifier                Description
+*******************************************************************************
+*  2019.01.10     	Education 	               최초 생성 
+*******************************************************************************
+*/
+
+var sSearchConditionType  	;
+var oBindDs  				;
+var oBindFromCol 			;
+var oBindToCol 				;
+
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+			var gtrcPos = "Comm_SearchConditionFromTo.xfdl.form_onload";
+	// 0.선언
+	var sEvFrm;
+	
+	{	//	1. 스콥 확인용
+// 											this.gtrace("this.parent.form.name--->"+this.parent.form.name, gtrcPos);
+// 											this.gtrace("this.parent.form.parent.name--->"+this.parent.form.parent.name, gtrcPos);
+// 											this.gtrace("this.parent.form.parent.parent.name--->"+this.parent.form.parent.parent.parent.name, gtrcPos);
+// 											this.gtrace("this.parent.form.parent.parent.parent.name--->"+this.parent.form.parent.parent.parent.name, gtrcPos);
+// 											this.gtrace("this.parent.form.parent.parent.parent.parent.name--->"+this.parent.form.parent.parent.parent.parent.name, gtrcPos);
+// 											this.gtrace("this.parent.form.parent.parent.parent.parent.parent.parent.name--->"+this.parent.form.parent.parent.parent.parent.parent.parent.name, gtrcPos);
+	}
+	
+	{	//	2. 상위 폼 찾아 오기
+		sEvFrm = "this.parent.form.parent.parent";		//왜 parent를 두번 써야 하는 것인가 ??
+		
+		while(eval(sEvFrm) instanceof nexacro.Form){
+			sEvFrm += ".parent";
+		}																				//this.gtrace("sEvFrm--->"+sEvFrm, gtrcPos);
+			sEvFrm += ".parent";						//왜 parent를 두번 써야 하는 것인가 ??
+	}
+	
+	{	//	3. userproperty를 통해 전역에 타입,바인딩DS,컬럼 세팅
+		var arrUserProp = this._getUserProperty("this.parent","SearchConditionType");	this.gtrace("this.parent.SearchConditionType--->"+this.parent.SearchConditionType, gtrcPos);
+
+		sSearchConditionType  	= arrUserProp[0];									this.gtrace("sSearchConditionType--->"+sSearchConditionType, gtrcPos);
+		oBindDs  				= eval(sEvFrm+"."+arrUserProp[1]);      			this.gtrace("oBindDs.name --->"+oBindDs.name, gtrcPos);
+		oBindFromCol 			= arrUserProp[2];                           		this.gtrace("oBindFromCol--->"+oBindFromCol, gtrcPos);
+		oBindToCol 				= arrUserProp[3];                           		this.gtrace("oBindToCol--->"+oBindToCol, gtrcPos);
+	}
+	
+	{	//  9. 기본호출 ( 그리드, 초기화 )
+		this.gfn_formOnLoad(this);
+		this.fn_init();
+	}
+			
+			this.gtrace("<-------------------END------------------->", gtrcPos);
+};
+
+/**
+* @description 초기화
+*/
+this.fn_init = function()
+{
+	//1.데이터셋
+	this.ds_FromTo.clearData();
+	this.ds_FromTo.addRow();
+};
+
+/**
+* @description 검색버튼 클릭
+*/
+this.div_search_btn_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+			var gtrcPos = "Comm_SearchConditionFromTo.xfdl.div_search_btn_onclick";	// trace위치 세팅
+			
+	{ //	1. 팝업 띄우기
+		var sPopUrl 	= this.ds_SearchConditionType.lookup("TypeCode",sSearchConditionType, "PopupUrl");		this.gtrace("sPopUrl--->"+sPopUrl, gtrcPos);
+		var sPopupId  	= "modalPopup";
+		var sUrl      	= sPopUrl;
+		var oArg      	= {pStr:"Nexacro", pNum:1234, pObj:obj.EditNameToApply};
+		var sCallBack 	= "fn_popupCallback";
+		var oOption   	= {title : this.gfn_getWord("popup.modal")};	//팝업의 TitleText ( 다국어 관련, 변경해 줄 것 )
+		
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+	}
+};
+
+/**
+* @description 콜백
+*/
+this.fn_popupCallback = function(sPopId, sRtn)
+{
+			var gtrcPos = "Comm_SearchConditionFromTo.xfdl.fn_popupCallback";
+	var dsSetCol 		;
+	var sKey			;
+	var	sEtc_00			;
+	var	sEtc_10			;
+
+	{	//0.리턴값 받기
+		var objRtn 		= 	JSON.parse(sRtn);
+
+		dsSetCol 	= 	objRtn.rtnObj;				this.gtrace("dsSetCol--->"	+dsSetCol, gtrcPos);
+		sKey		=	objRtn.sRtnKey;				this.gtrace("sKey	--->"	+sKey	, gtrcPos);
+		sEtc_00		=	objRtn.sRtnEtc_00;			this.gtrace("sEtc_00--->"	+sEtc_00, gtrcPos);
+		sEtc_10		=	objRtn.sRtnEtc_10;			this.gtrace("sEtc_10--->"	+sEtc_10, gtrcPos);
+	}
+
+	{	//1.부모데이터셋에 값 세팅, 2.ds_FromTo에 값 세팅
+		//1.
+		var sParentSetCol;
+		switch(dsSetCol){
+			case "From" : sParentSetCol = oBindFromCol;			this.gtrace("dsSetCol--->"	+dsSetCol, gtrcPos);
+						break;
+			case "To" 	: sParentSetCol = oBindToCol; break;
+			default : 	break;
+		}														this.gtrace("sParentSetCol--->"	+sParentSetCol, gtrcPos);
+		oBindDs.setColumn(0, sParentSetCol, sKey);	
+		
+		//2.
+		this.ds_FromTo.setColumn(0, dsSetCol, sKey);
+	}
+
+}
+this.EditFrom_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+{
+					var gtrcPos = "Comm_SearchConditionFromTo.xfdl.EditFrom_onchanged";
+
+	var dsSetCol = obj.name;
+	{	//1.부모데이터셋에 값 세팅, 2.ds_FromTo에 값 세팅
+		//1.
+		var sParentSetCol;
+		switch(dsSetCol){
+			case "EditFrom" : sParentSetCol = oBindFromCol;			this.gtrace("dsSetCol--->"	+dsSetCol, gtrcPos);
+						break;
+			case "EditTo" 	: sParentSetCol = oBindToCol; break;
+			default : 	break;
+		}															this.gtrace("sParentSetCol--->"	+sParentSetCol, gtrcPos);
+		oBindDs.setColumn(0, sParentSetCol, sKey);	
+		
+		//2.
+		this.ds_FromTo.setColumn(0, dsSetCol, sKey);
+	}
+
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_SearchConditionType">
+        <ColumnInfo>
+          <Column id="TypeCode" type="STRING" size="256"/>
+          <Column id="PopupUrl" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="TypeCode">SalesOrderNo</Col>
+            <Col id="PopupUrl">Popup::PopupSalesOrder.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="TypeCode">StyleNo</Col>
+            <Col id="PopupUrl">Popup::PopupSalesOrder.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="TypeCode">VendorCode</Col>
+            <Col id="PopupUrl">Popup::PopupSalesOrder.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="TypeCode">MaterialCode</Col>
+            <Col id="PopupUrl">Popup::PopupSalesOrder.xfdl</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_FromTo">
+        <ColumnInfo>
+          <Column id="From" type="STRING" size="256"/>
+          <Column id="To" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="EditFrom" propid="value" datasetid="ds_FromTo" columnid="From"/>
+      <BindItem id="item1" compid="EditTo" propid="value" datasetid="ds_FromTo" columnid="To"/>
+    </Bind>
+  </Form>
+</FDL>

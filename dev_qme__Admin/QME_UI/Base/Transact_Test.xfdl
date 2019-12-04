@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Transact_Test" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Grid id="Grid00" taborder="0" left="140" top="140" width="650" height="300"/>
+        <Edit id="Edit00" taborder="1" left="140" top="66" width="138" height="28"/>
+        <Static id="Static00" taborder="2" text="입력값" left="72" top="66" width="68" height="28"/>
+        <Button id="Button00" taborder="3" text="실행" left="294" top="66" width="112" height="28"/>
+        <Static id="Static00_00" taborder="4" text="결과값" left="66" top="140" width="68" height="28"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00"/>
+    </Objects>
+  </Form>
+</FDL>

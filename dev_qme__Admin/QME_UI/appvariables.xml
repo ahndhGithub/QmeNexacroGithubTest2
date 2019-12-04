@@ -1,0 +1,932 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppVariables version="2.0">
+  <Datasets>
+    <Dataset id="gds_Menu">
+      <ColumnInfo>
+        <Column id="MenuID" type="INT" size="256"/>
+        <Column id="MenuCode" type="STRING" size="256"/>
+        <Column id="MenuName" type="STRING" size="256"/>
+        <Column id="MenuLevel" type="STRING" size="256"/>
+        <Column id="MenuGroup" type="STRING" size="256"/>
+        <Column id="MenuSub" type="STRING" size="256"/>
+        <Column id="MenuSeq" type="STRING" size="256"/>
+        <Column id="FormCode" type="STRING" size="256"/>
+        <Column id="MenuURL" type="STRING" size="256"/>
+        <Column id="MenuDescr" type="STRING" size="256"/>
+        <Column id="isLeaf" type="STRING" size="256"/>
+        <Column id="isDUP" type="STRING" size="256"/>
+        <Column id="isUseMobile" type="STRING" size="256"/>
+        <Column id="isUse" type="STRING" size="256"/>
+        <Column id="ProfileCode" type="STRING" size="256"/>
+        <Column id="ProfileName" type="STRING" size="256"/>
+        <Column id="FormStartUpCode" type="STRING" size="256"/>
+        <Column id="DB_NM" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="MenuCode">NewMenu3</Col>
+          <Col id="MenuName">File</Col>
+          <Col id="MenuLevel">0</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuID">1</Col>
+          <Col id="isLeaf">N</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">NewMenu24</Col>
+          <Col id="MenuName">NewMenu24</Col>
+          <Col id="MenuLevel">1</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuID">2</Col>
+          <Col id="isLeaf">Y</Col>
+          <Col id="MenuURL">Basis::Template.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">NewMenu25</Col>
+          <Col id="MenuName">NewMenu25</Col>
+          <Col id="MenuLevel">1</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuID">3</Col>
+          <Col id="isLeaf">Y</Col>
+          <Col id="MenuURL">Basis::Template.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">download</Col>
+          <Col id="MenuName">Download</Col>
+          <Col id="MenuLevel">1</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuID">4</Col>
+          <Col id="MenuURL">Basis::Template.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">print</Col>
+          <Col id="MenuName">Print</Col>
+          <Col id="MenuLevel">1</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuURL">Basis::Template.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">exit</Col>
+          <Col id="MenuName">Exit</Col>
+          <Col id="MenuLevel">1</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuURL">Basis::Template.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">Master</Col>
+          <Col id="MenuName">Basic Data</Col>
+          <Col id="MenuLevel">0</Col>
+          <Col id="MenuDescr"/>
+          <Col id="MenuURL">Basis::Template.xfdl</Col>
+          <Col id="isLeaf">N</Col>
+        </Row>
+        <Row>
+          <Col id="MenuCode">Code</Col>
+          <Col id="MenuName">Control Code</Col>
+          <Col id="MenuLevel">1</Col>
+          <Col id="MenuDescr"/>
+        </Row>
+      </Rows>
+    </Dataset>
+    <Dataset id="gds_Logon">
+      <ColumnInfo>
+        <Column id="UserCode" type="STRING" size="256"/>
+        <Column id="passWord" type="STRING" size="256"/>
+        <Column id="ret" type="STRING" size="256"/>
+        <Column id="msg" type="STRING" size="256"/>
+        <Column id="CDTYP" type="STRING" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_User">
+      <ColumnInfo>
+        <Column id="UserCode" type="STRING" size="256"/>
+        <Column id="UserName" type="STRING" size="256"/>
+        <Column id="p_user_id" type="STRING" size="256"/>
+        <Column id="AuthorityLevel" type="STRING" size="256"/>
+        <Column id="Org_ID" type="STRING" size="256"/>
+        <Column id="OrgName" type="STRING" size="256"/>
+        <Column id="UserType" type="STRING" size="256"/>
+        <Column id="DB_NM" type="STRING" size="256"/>
+        <Column id="TelNo" type="STRING" size="256"/>
+        <Column id="eMail" type="STRING" size="256"/>
+        <Column id="ret" type="STRING" size="256"/>
+        <Column id="SalesOffice" type="STRING" size="256"/>
+        <Column id="SalesOfficeName" type="STRING" size="256"/>
+        <Column id="SalesChannel" type="STRING" size="256"/>
+        <Column id="SalesChannelName" type="STRING" size="256"/>
+        <Column id="SalesOrg" type="STRING" size="256"/>
+        <Column id="SalesOrgName" type="STRING" size="256"/>
+        <Column id="SalesCount" type="STRING" size="256"/>
+        <Column id="DC_Rate" type="BIGDECIMAL" size="256"/>
+        <Column id="Fee_Rate" type="BIGDECIMAL" size="256"/>
+        <Column id="Customer_ID" type="STRING" size="256"/>
+        <Column id="CustomerName" type="STRING" size="256"/>
+        <Column id="Contract_NO" type="STRING" size="256"/>
+        <Column id="EmployeeCode" type="STRING" size="256"/>
+        <Column id="EmployeeName" type="STRING" size="256"/>
+        <Column id="Duty" type="STRING" size="256"/>
+        <Column id="pwChangeTarget" type="STRING" size="1"/>
+        <Column id="Vendor_ID" type="STRING" size="256"/>
+        <Column id="VendorName" type="STRING" size="256"/>
+        <Column id="AddOrder" type="STRING" size="256"/>
+        <Column id="ServerType" type="STRING" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_OpenMenu">
+      <ColumnInfo>
+        <Column id="FORM_ID" type="STRING" size="256"/>
+        <Column id="MenuCode" type="STRING" size="256"/>
+        <Column id="MenuName" type="STRING" size="256"/>
+        <Column id="MenuURL" type="STRING" size="256"/>
+        <Column id="DupCount" type="INT" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_UserGridSet">
+      <ColumnInfo>
+        <Column id="FormCode" type="STRING" size="256"/>
+        <Column id="GridID" type="STRING" size="256"/>
+        <Column id="UserCode" type="STRING" size="256"/>
+        <Column id="xmlString" type="STRING" size="9999"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_MsgSet">
+      <ColumnInfo>
+        <Column id="idx" type="STRING" size="256"/>
+        <Column id="EnMsg" type="STRING" size="256"/>
+        <Column id="KoMsg" type="STRING" size="256"/>
+        <Column id="Remark" type="STRING" size="256"/>
+        <Column id="SaveUser" type="STRING" size="256"/>
+        <Column id="SaveDate" type="STRING" size="256"/>
+        <Column id="UpdateUser" type="STRING" size="256"/>
+        <Column id="SpName" type="STRING" size="256"/>
+        <Column id="EO_Trace" type="STRING" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_UserGridSetOut">
+      <ColumnInfo>
+        <Column id="FormCode" type="STRING" size="256"/>
+        <Column id="GridCode" type="STRING" size="256"/>
+        <Column id="UserCode" type="STRING" size="256"/>
+        <Column id="xmlString" type="STRING" size="9999"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_gridPopupMenu">
+      <ColumnInfo>
+        <Column id="id" type="STRING" size="256"/>
+        <Column id="level" type="STRING" size="256"/>
+        <Column id="caption" type="STRING" size="256"/>
+        <Column id="captionEN" type="STRING" size="256"/>
+        <Column id="enable" type="STRING" size="256"/>
+        <Column id="userData" type="STRING" size="256"/>
+        <Column id="upmenu" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="id">shapefix</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">틀고정</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">shape fix</Col>
+        </Row>
+        <Row>
+          <Col id="id">colfix</Col>
+          <Col id="level">1</Col>
+          <Col id="caption">열고정</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="upmenu">shapefix</Col>
+          <Col id="captionEN">column fix</Col>
+        </Row>
+        <Row>
+          <Col id="id">colfixfree</Col>
+          <Col id="level">1</Col>
+          <Col id="caption">열고정해제</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="upmenu">shapefix</Col>
+          <Col id="captionEN">column fix free</Col>
+        </Row>
+        <Row>
+          <Col id="id">rowfix</Col>
+          <Col id="level">1</Col>
+          <Col id="caption">행고정</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="upmenu">shapefix</Col>
+          <Col id="captionEN">row fix</Col>
+        </Row>
+        <Row>
+          <Col id="id">rowfixfree</Col>
+          <Col id="level">1</Col>
+          <Col id="caption">행고정해제</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="upmenu">shapefix</Col>
+          <Col id="captionEN">row fix free</Col>
+        </Row>
+        <Row>
+          <Col id="caption">-</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="level">0</Col>
+          <Col id="captionEN">-</Col>
+        </Row>
+        <Row>
+          <Col id="id">filter</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">그리드필터</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">grid filter</Col>
+        </Row>
+        <Row>
+          <Col id="id">filterfree</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">그리드필터 해제</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">grid filter free</Col>
+        </Row>
+        <Row>
+          <Col id="level">0</Col>
+          <Col id="caption">-</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">-</Col>
+        </Row>
+        <Row>
+          <Col id="id">replace</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">찾기/바꾸기</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">find/replace</Col>
+        </Row>
+        <Row>
+          <Col id="id">colhide</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">컬럼 숨기기/보이기</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">column show/hide</Col>
+        </Row>
+        <Row>
+          <Col id="level">0</Col>
+          <Col id="caption">-</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">-</Col>
+        </Row>
+        <Row>
+          <Col id="id">excel</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">엑셀</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">excel</Col>
+        </Row>
+        <Row>
+          <Col id="id">export</Col>
+          <Col id="level">1</Col>
+          <Col id="caption">내보내기</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="upmenu">excel</Col>
+          <Col id="captionEN">export</Col>
+        </Row>
+        <Row>
+          <Col id="id">import</Col>
+          <Col id="level">1</Col>
+          <Col id="caption">가져오기</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="upmenu">excel</Col>
+          <Col id="captionEN">import</Col>
+        </Row>
+        <Row>
+          <Col id="level">0</Col>
+          <Col id="caption">-</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">-</Col>
+        </Row>
+        <Row>
+          <Col id="id">personal</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">현재포맷저장</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">saving current format</Col>
+        </Row>
+        <Row>
+          <Col id="id">initial</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">초기상태로</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">initialization</Col>
+        </Row>
+        <Row>
+          <Col id="level">0</Col>
+          <Col id="caption">-</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+          <Col id="captionEN">-</Col>
+        </Row>
+        <Row>
+          <Col id="id">subsum</Col>
+          <Col id="level">0</Col>
+          <Col id="caption">부분합</Col>
+          <Col id="captionEN">sub-sum</Col>
+          <Col id="enable">false</Col>
+          <Col id="userData">0</Col>
+        </Row>
+      </Rows>
+    </Dataset>
+    <Dataset id="gds_CommCode">
+      <ColumnInfo>
+        <Column id="CodeGroup" type="STRING" size="256"/>
+        <Column id="Code" type="STRING" size="256"/>
+        <Column id="CodeName" type="STRING" size="256"/>
+        <Column id="GropName" type="STRING" size="256"/>
+        <Column id="SortSeq" type="STRING" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_gridPersonal">
+      <ColumnInfo>
+        <Column id="sFormatId" type="STRING" size="256"/>
+        <Column id="sFormat" type="STRING" size="2147483647"/>
+        <Column id="sOrgFormat" type="STRING" size="2147483647"/>
+      </ColumnInfo>
+    </Dataset>
+    <Dataset id="gds_word">
+      <ColumnInfo>
+        <Column id="WORD_ID" type="STRING" size="256"/>
+        <Column id="KR" type="STRING" size="256"/>
+        <Column id="EN" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="KR">스테틱</Col>
+          <Col id="EN">static</Col>
+          <Col id="WORD_ID">comp.static</Col>
+        </Row>
+        <Row>
+          <Col id="KR">체크</Col>
+          <Col id="EN">check</Col>
+          <Col id="WORD_ID">comp.check</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">comp.button</Col>
+          <Col id="KR">버튼</Col>
+          <Col id="EN">button</Col>
+        </Row>
+        <Row>
+          <Col id="KR">박스</Col>
+          <Col id="EN">box</Col>
+          <Col id="WORD_ID">comp.box</Col>
+        </Row>
+        <Row>
+          <Col id="KR">콤보</Col>
+          <Col id="EN">combo</Col>
+          <Col id="WORD_ID">comp.combo</Col>
+        </Row>
+        <Row>
+          <Col id="KR">달력</Col>
+          <Col id="EN">calendar</Col>
+          <Col id="WORD_ID">comp.calendar</Col>
+        </Row>
+        <Row>
+          <Col id="KR">웹브라우저</Col>
+          <Col id="EN">web browser</Col>
+          <Col id="WORD_ID">comp.webbrowser</Col>
+        </Row>
+        <Row>
+          <Col id="KR">이미지</Col>
+          <Col id="EN">image</Col>
+          <Col id="WORD_ID">comp.image</Col>
+        </Row>
+        <Row>
+          <Col id="KR">팝업</Col>
+          <Col id="EN">popup</Col>
+          <Col id="WORD_ID">comp.popup</Col>
+        </Row>
+        <Row>
+          <Col id="KR">라디오</Col>
+          <Col id="EN">radio</Col>
+          <Col id="WORD_ID">comp.radio</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">comp.number</Col>
+          <Col id="KR">숫자</Col>
+          <Col id="EN">number</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">comp.text</Col>
+          <Col id="KR">텍스트</Col>
+          <Col id="EN">text</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">comp.test</Col>
+          <Col id="KR">테스트</Col>
+          <Col id="EN">test</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">comp.textmode</Col>
+          <Col id="KR">텍스트모드</Col>
+          <Col id="EN">text mode</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">frame.menu</Col>
+          <Col id="EN">menu</Col>
+          <Col id="KR">메뉴</Col>
+        </Row>
+        <Row>
+          <Col id="KR">즐겨찾기</Col>
+          <Col id="EN">Favorites</Col>
+          <Col id="WORD_ID">frame.favorites</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">frame.searchMenu</Col>
+          <Col id="KR">메뉴검색</Col>
+          <Col id="EN">Search</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">frame.searchMenu.button</Col>
+          <Col id="KR">검색</Col>
+          <Col id="EN">sch..</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">frame.logOut</Col>
+          <Col id="KR">로그아웃</Col>
+          <Col id="EN">Log out</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">cmm.no</Col>
+          <Col id="KR">순번</Col>
+          <Col id="EN">NO</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">cmm.status</Col>
+          <Col id="KR">상태</Col>
+          <Col id="EN">Status</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">cmm.checkbox</Col>
+          <Col id="KR">체크박스</Col>
+          <Col id="EN">Checkbox</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.notice</Col>
+          <Col id="KR">알림</Col>
+          <Col id="EN">notice</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.confirm</Col>
+          <Col id="KR">확인</Col>
+          <Col id="EN">confirm</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.ok</Col>
+          <Col id="KR">확인</Col>
+          <Col id="EN">OK</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.close</Col>
+          <Col id="KR">닫기</Col>
+          <Col id="EN">Close</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.cancel</Col>
+          <Col id="KR">취소</Col>
+          <Col id="EN">Cancel</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.periodselect</Col>
+          <Col id="KR">기간 선택</Col>
+          <Col id="EN">Select the time period</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.monthselect</Col>
+          <Col id="KR">월 선택</Col>
+          <Col id="EN">Select the month</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.dataselect</Col>
+          <Col id="KR">데이터 선택</Col>
+          <Col id="EN">Select the data</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.columnselect</Col>
+          <Col id="KR">컬럼 선택</Col>
+          <Col id="EN">Select the column</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.modal</Col>
+          <Col id="KR">모달팝업</Col>
+          <Col id="EN">modal popup</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.columnname</Col>
+          <Col id="KR">컬럼명</Col>
+          <Col id="EN">column name</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.filtercriteria</Col>
+          <Col id="KR">필터 기준</Col>
+          <Col id="EN">filter criteria</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.findcondition</Col>
+          <Col id="KR">찾을 조건</Col>
+          <Col id="EN">find conditions</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.datafiltersetting</Col>
+          <Col id="KR">데이터 필터 설정</Col>
+          <Col id="EN">data filter setting</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.apply</Col>
+          <Col id="KR">적용</Col>
+          <Col id="EN">Apply</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.datafindreplace</Col>
+          <Col id="KR">데이터 찾기/바꾸기</Col>
+          <Col id="EN">data find/replace</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.targetcolumn</Col>
+          <Col id="KR">대상 컬럼</Col>
+          <Col id="EN">target column</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.findstring</Col>
+          <Col id="KR">찾을 문자열</Col>
+          <Col id="EN">find string</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.replacestring</Col>
+          <Col id="KR">바꿀 문자열</Col>
+          <Col id="EN">replace string</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.finddirection</Col>
+          <Col id="KR">찾을 방향</Col>
+          <Col id="EN">find direction</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.findposition</Col>
+          <Col id="KR">찾을 위치</Col>
+          <Col id="EN">find position</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.find</Col>
+          <Col id="KR">찾기</Col>
+          <Col id="EN">Find</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.replace</Col>
+          <Col id="KR">바꾸기</Col>
+          <Col id="EN">Replace</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.allchange</Col>
+          <Col id="KR">모두바꾸기</Col>
+          <Col id="EN">All Replace</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.casesensitive</Col>
+          <Col id="KR">대/소문자 구분</Col>
+          <Col id="EN">Case sensitive</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.colshwohide</Col>
+          <Col id="KR">컬럼 보이기/숨기기</Col>
+          <Col id="EN">column show/hide</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">popup.subsum</Col>
+          <Col id="KR">부분합</Col>
+          <Col id="EN">Sub-Sum</Col>
+        </Row>
+        <Row>
+          <Col id="KR">조회</Col>
+          <Col id="EN">search</Col>
+          <Col id="WORD_ID">search</Col>
+        </Row>
+        <Row>
+          <Col id="KR">입력</Col>
+          <Col id="EN">insert</Col>
+          <Col id="WORD_ID">insert</Col>
+        </Row>
+        <Row>
+          <Col id="KR">삭제</Col>
+          <Col id="EN">delete</Col>
+          <Col id="WORD_ID">delete</Col>
+        </Row>
+        <Row>
+          <Col id="KR">수정</Col>
+          <Col id="EN">modify</Col>
+          <Col id="WORD_ID">modify</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">save</Col>
+          <Col id="KR">저장</Col>
+          <Col id="EN">save</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">print</Col>
+          <Col id="EN">print</Col>
+          <Col id="KR">출력</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">excel</Col>
+          <Col id="KR">엑셀</Col>
+          <Col id="EN">excel</Col>
+        </Row>
+        <Row>
+          <Col id="KR">사원</Col>
+          <Col id="EN">employee</Col>
+          <Col id="WORD_ID">employee</Col>
+        </Row>
+        <Row>
+          <Col id="KR">부서</Col>
+          <Col id="EN">department</Col>
+          <Col id="WORD_ID">department</Col>
+        </Row>
+        <Row>
+          <Col id="KR">회사</Col>
+          <Col id="EN">company</Col>
+          <Col id="WORD_ID">company</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">user</Col>
+          <Col id="KR">사용자</Col>
+          <Col id="EN">user</Col>
+        </Row>
+        <Row>
+          <Col id="KR">주민등록번호</Col>
+          <Col id="EN">Social Security Number</Col>
+          <Col id="WORD_ID">user.jumin</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">user.id</Col>
+          <Col id="KR">아이디</Col>
+          <Col id="EN">ID</Col>
+        </Row>
+        <Row>
+          <Col id="KR">명칭</Col>
+          <Col id="WORD_ID">designation</Col>
+          <Col id="EN">designation</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">useflg</Col>
+          <Col id="KR">사용 여부</Col>
+          <Col id="EN">use flg</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">reguser</Col>
+          <Col id="KR">등록자</Col>
+          <Col id="EN">register user</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">description</Col>
+          <Col id="KR">설명</Col>
+          <Col id="EN">description</Col>
+        </Row>
+        <Row>
+          <Col id="KR">시작일자</Col>
+          <Col id="EN">Start date</Col>
+          <Col id="WORD_ID">date.start</Col>
+        </Row>
+        <Row>
+          <Col id="KR">종료일</Col>
+          <Col id="EN">End date</Col>
+          <Col id="WORD_ID">date.end</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">value.max</Col>
+          <Col id="KR">최대값</Col>
+          <Col id="EN">Maximum value</Col>
+        </Row>
+        <Row>
+          <Col id="KR">금리</Col>
+          <Col id="EN">Interest rate</Col>
+          <Col id="WORD_ID">value.interest</Col>
+        </Row>
+        <Row>
+          <Col id="EN">1st value</Col>
+          <Col id="KR">1번째값</Col>
+          <Col id="WORD_ID">value.1st</Col>
+        </Row>
+        <Row>
+          <Col id="EN">2nd value</Col>
+          <Col id="KR">2번째값</Col>
+          <Col id="WORD_ID">value.2nd</Col>
+        </Row>
+        <Row>
+          <Col id="KR">등록자</Col>
+          <Col id="EN">register</Col>
+          <Col id="WORD_ID">register</Col>
+        </Row>
+        <Row>
+          <Col id="KR">정보</Col>
+          <Col id="EN">info</Col>
+          <Col id="WORD_ID">info</Col>
+        </Row>
+        <Row>
+          <Col id="KR">용어</Col>
+          <Col id="EN">word</Col>
+          <Col id="WORD_ID">word</Col>
+        </Row>
+        <Row>
+          <Col id="KR">사전</Col>
+          <Col id="EN">dictionary</Col>
+          <Col id="WORD_ID">dictionary</Col>
+        </Row>
+        <Row>
+          <Col id="KR">국가</Col>
+          <Col id="EN">nation</Col>
+          <Col id="WORD_ID">nation</Col>
+        </Row>
+        <Row>
+          <Col id="KR">언어</Col>
+          <Col id="EN">language</Col>
+          <Col id="WORD_ID">language</Col>
+        </Row>
+        <Row>
+          <Col id="KR">선택</Col>
+          <Col id="EN">select</Col>
+          <Col id="WORD_ID">select</Col>
+        </Row>
+        <Row>
+          <Col id="KR">초기화</Col>
+          <Col id="EN">initialize</Col>
+          <Col id="WORD_ID">initialize</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">tab1</Col>
+          <Col id="KR">1번째탭</Col>
+          <Col id="EN">First Tab</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">tab2</Col>
+          <Col id="KR">2번째탭</Col>
+          <Col id="EN">Second Tab</Col>
+        </Row>
+        <Row>
+          <Col id="KR">한글</Col>
+          <Col id="EN">Korean</Col>
+          <Col id="WORD_ID">korean</Col>
+        </Row>
+        <Row>
+          <Col id="KR">영어</Col>
+          <Col id="EN">English</Col>
+          <Col id="WORD_ID">english</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">sort</Col>
+          <Col id="KR">정렬</Col>
+          <Col id="EN">sort</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">colfix</Col>
+          <Col id="KR">열고정</Col>
+          <Col id="EN">column fix</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">rowfix</Col>
+          <Col id="KR">행고정</Col>
+          <Col id="EN">row fix</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">excel</Col>
+          <Col id="KR">엑셀</Col>
+          <Col id="EN">excel</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">basicfunction</Col>
+          <Col id="KR">기본기능</Col>
+          <Col id="EN">basic function</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">complicatedgrid</Col>
+          <Col id="KR">복잡한 그리드</Col>
+          <Col id="EN">complicated grid</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">gridpersonal</Col>
+          <Col id="KR">그리드개인화</Col>
+          <Col id="EN">personalization grid</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">listcount</Col>
+          <Col id="KR">목록 갯수</Col>
+          <Col id="EN">List count</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">etorangers</Col>
+          <Col id="EN">Eto Rangers</Col>
+          <Col id="KR">꾸러기수비대</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">sunday</Col>
+          <Col id="KR">일요일</Col>
+          <Col id="EN">Sunday</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">monday</Col>
+          <Col id="KR">월요일</Col>
+          <Col id="EN">Monday</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">tuesday</Col>
+          <Col id="KR">화요일</Col>
+          <Col id="EN">Tuesday</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">wednesday</Col>
+          <Col id="KR">수요일</Col>
+          <Col id="EN">Wednesday</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">thursday</Col>
+          <Col id="KR">목요일</Col>
+          <Col id="EN">Thursday</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">friday</Col>
+          <Col id="KR">금요일</Col>
+          <Col id="EN">Friday</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">saturday</Col>
+          <Col id="KR">토요일</Col>
+          <Col id="EN">Saturday</Col>
+        </Row>
+        <Row>
+          <Col id="KR">월</Col>
+          <Col id="WORD_ID">mon</Col>
+          <Col id="EN">MON</Col>
+        </Row>
+        <Row>
+          <Col id="KR">화</Col>
+          <Col id="WORD_ID">tue</Col>
+          <Col id="EN">TUE</Col>
+        </Row>
+        <Row>
+          <Col id="KR">수</Col>
+          <Col id="WORD_ID">wed</Col>
+          <Col id="EN">WED</Col>
+        </Row>
+        <Row>
+          <Col id="KR">목</Col>
+          <Col id="WORD_ID">thu</Col>
+          <Col id="EN">THU</Col>
+        </Row>
+        <Row>
+          <Col id="KR">금</Col>
+          <Col id="WORD_ID">fri</Col>
+          <Col id="EN">FRI</Col>
+        </Row>
+        <Row>
+          <Col id="KR">토</Col>
+          <Col id="WORD_ID">sat</Col>
+          <Col id="EN">SAT</Col>
+        </Row>
+        <Row>
+          <Col id="KR">일</Col>
+          <Col id="WORD_ID">sun</Col>
+          <Col id="EN">SUN</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">week</Col>
+          <Col id="KR">주</Col>
+          <Col id="EN">WEEK</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">emp.name</Col>
+          <Col id="KR">성명</Col>
+          <Col id="EN">Name</Col>
+        </Row>
+        <Row>
+          <Col id="WORD_ID">emp.id</Col>
+          <Col id="KR">사원번호</Col>
+          <Col id="EN">Emp. ID</Col>
+        </Row>
+      </Rows>
+    </Dataset>
+    <Dataset id="gds_QmeLogonInfo">
+      <ColumnInfo>
+        <Column id="QmeLogonUserId" type="STRING" size="256"/>
+        <Column id="LanguageKey" type="STRING" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+  </Datasets>
+  <Variables>
+    <Variable id="QmeLogonUserId"/>
+    <Variable id="LanguageKey"/>
+  </Variables>
+</AppVariables>
